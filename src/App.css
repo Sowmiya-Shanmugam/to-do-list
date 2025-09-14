@@ -194,8 +194,12 @@ ul {
     gap: 8px;
   }
 
+  .tasks li button {
+  background: white;
+  }
+
   .task-input {
-    flex-direction: column;
+    flex-direction: row;
 
   }
 

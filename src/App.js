@@ -3,14 +3,14 @@ import "./App.css";
 import Spaceship from "./spaceship";
 
 function App() {
-  // ✅ Load tasks from localStorage on first render
+
   const [tasks, setTasks] = useState(() => {
     return JSON.parse(localStorage.getItem("spaceTasks")) || [];
   });
   const [newTask, setNewTask] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
 
-  // ✅ Save tasks to localStorage whenever they change
+
   useEffect(() => {
     localStorage.setItem("spaceTasks", JSON.stringify(tasks));
   }, [tasks]);
