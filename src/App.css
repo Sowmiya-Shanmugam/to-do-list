@@ -4,12 +4,60 @@
   min-height: 100vh;
   width: 100vw;
   margin: 0;
+  color: white;
   background-color: #001f3f; 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px 20px;
   box-sizing: border-box;
+}
+
+/* 🎯 Goal Setup Box */
+.goal-setup {
+  background: rgba(0, 0, 40, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  width: 100%;
+  color: white;
+}
+
+.goal-setup input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  width: 70%;
+  margin-right: 10px;
+  outline: none;
+  background: #1f2937;
+  color: white;
+  transition: 0.3s;
+}
+
+.goal-setup input:focus {
+  box-shadow: 0 0 10px #2563eb;
+}
+
+.goal-setup button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.goal-setup button:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
 }
 
 /* TODO CONTAINER */
@@ -173,8 +221,75 @@ ul {
   50%  { transform: translateY(-5px); }
   100% { transform: translateY(0); }
 }
+/* moon top-left */
+.moon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 50px;
+  animation: bounce 2s infinite ease-in-out;
+}
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+/* Congrats popup */
+.congrats-popup {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(0, 255, 100, 0.2);
+  border: 2px solid #00ff6a;
+  border-radius: 12px;
+  text-align: center;
+  animation: popupFade 1s ease-in-out;
+}
 
-/* RESPONSIVE DESIGN*/
+.congrats-popup h2 {
+  color: #00ff9d;
+  margin-bottom: 12px;
+}
+
+.congrats-popup button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.congrats-popup button:hover {
+  background: #1d4ed8;
+}
+
+/* Glowing ring */
+.ring {
+  width: 80px;
+  height: 80px;
+  border: 6px solid #00ff9d;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  animation: spin 2s linear infinite, glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px #00ff9d; }
+  to { box-shadow: 0 0 25px #00ff9d; }
+}
+
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* RESPONSIVE*/
 @media (max-width: 768px) {
   .app-container {
     padding: 20px 10px;

@@ -37,6 +37,8 @@ function Spaceship({ tasks, typing }) {
 
       {/* Spaceship bottom-right */}
       <div className="spaceship">🚀</div>
+       {/* moon top-left */}
+      <div className="moon">🌕</div>
     </div>
   );
 }
